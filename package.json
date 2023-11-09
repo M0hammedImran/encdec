@@ -41,6 +41,11 @@
 		"decrypt",
 		"crypto"
 	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/M0hammedImran/encdec/"
+	},
+	"homepage": "https://github.com/M0hammedImran/encdec/",
 	"author": "Mohammed Imran <mohammedimran86992@gmail.com>",
 	"license": "Apache-2.0"
 }
