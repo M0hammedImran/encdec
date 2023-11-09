@@ -16,8 +16,7 @@
 	"scripts": {
 		"dev": "vite",
 		"build": "rm -rf dist && tsc && swc lib -d dist",
-		"prepare": "npm run test",
-		"publish": "npm run build && npm publish",
+		"prepare": "npm run test && npm run build ",
 		"test": "vitest --run",
 		"test:watch": "vitest",
 		"coverage": "vitest run --coverage"
