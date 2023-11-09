@@ -19,6 +19,6 @@
 		"noUnusedParameters": true,
 		"noFallthroughCasesInSwitch": true
 	},
-	"include": ["src"]
+	"include": ["lib", "lib/encdec.test.ts", "lib/encdec.ts"]
 }
 
