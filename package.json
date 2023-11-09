@@ -1,7 +1,7 @@
 {
 	"name": "@moonstack/encdec",
 	"private": false,
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"type": "module",
 	"files": [
 		"dist",
@@ -16,7 +16,7 @@
 	"scripts": {
 		"dev": "vite",
 		"build": "rm -rf dist && tsc && swc lib -d dist",
-		"prepublish": "npm run test",
+		"prepare": "npm run test",
 		"publish": "npm run build && npm publish",
 		"test": "vitest --run",
 		"test:watch": "vitest",
