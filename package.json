@@ -4,18 +4,31 @@
 	"version": "1.0.2",
 	"type": "module",
 	"files": [
-		"dist",
+		"dist/*",
+		"lib/*",
 		"index.d.ts"
 	],
-	"main": "./dist/encdec.js",
+	"main": "./dist/encdec.cjs",
+	"module": "./dist/encdec.js",
 	"types": "./index.d.ts",
 	"exports": {
-		"types": "./index.d.ts",
-		"require": "./dist/encdec.js"
+		".": {
+			"import": {
+				"types": "./index.d.ts",
+				"default": "./dist/encdec.js"
+			},
+			"require": {
+				"types": "./index.d.ts",
+				"default": "./dist/encdec.cjs"
+			}
+		},
+		"./package.json": "./package.json"
 	},
 	"scripts": {
 		"dev": "vite",
-		"build": "rm -rf dist && tsc && swc lib -d dist",
+		"build": "rm -rf dist && tsc && npm run swc:commonjs && mv ./dist/encdec.js ./dist/encdec.cjs && npm run swc:es6",
+		"swc:es6": "npx swc lib -d dist -C module.type=es6 -C jsc.target=esnext",
+		"swc:commonjs": "npx swc lib -d dist",
 		"prepare": "npm run test && npm run build ",
 		"test": "vitest --run",
 		"test:watch": "vitest",
